@@ -1,11 +1,9 @@
 package com.plumbee.codetest;
 
-
 /**
  * 
  * 
  * @author miguelgonzalez776
- *
  */
 public class AnagramGameImpl implements AnagramGame {
 
@@ -22,12 +20,12 @@ public class AnagramGameImpl implements AnagramGame {
         this.letters = letters;
         this.wordDictionary = wordDictionary;
     }
+	
     /**
      * 
      * @param username
      * @param word 
      */
-
     @Override
     public int submitWord(String username, String word) {
         final boolean isAnagram = checkIsAnagram(word);
@@ -39,37 +37,37 @@ public class AnagramGameImpl implements AnagramGame {
         return score;
     }
     
-	/**
-	 * 
-	 * @param position
-	 */
+   /**
+    * 
+    * @param position
+    */
     @Override
     public String getUserNameAtPosition(int position) {
         return leaderboard.getEntryAtPosition(position).getUsername();
     }
 
-	/**
-	 * 
-	 * @param position
-	 */
+   /**
+    * 
+    * @param position
+    */
     @Override
     public String getWordEntryAtPosition(int position) {
         return leaderboard.getEntryAtPosition(position).getWord();
     }
     
-	/**
-	 * 
-	 * @param position
-	 */
+   /**
+    * 
+    * @param position
+    */
     @Override
     public Integer getScoreAtPosition(int position) {
         return leaderboard.getEntryAtPosition(position).getScore();
     }
     
-	/**
-	 * 
-	 * @param word
-	 */
+   /**
+    * 
+    * @param word
+    */
     private boolean checkIsAnagram(String word) {
         String auxLetters = letters;
         for (char c : word.toCharArray()) {
